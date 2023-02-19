@@ -3,3 +3,98 @@
     - The styles in this folder's `style.css`
     - The script in script.js, which should be included via a `<script src="script.js" >` call before your closing </body> tag 
 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yamlak Shimelis's Labs</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!--Full width wrapper div-->
+      <header class="header"><h1>Yamlak Shimelis's Labs</h1></header>
+      <div class="container">
+        <!--Container div-->
+        <div class="left_section box">
+          <!--Left div-->
+          <header><h3>Album Names</h3></header>
+          <ol class="box">
+            <li>Graduation - Kanye West</li>
+            <li>Luv is Rage 2 - Lil Uzi Vert</li>
+            <li>Channel ORANGE - Frank Ocean</li>
+            <li>More Life - Drake</li>
+            <li>Drip or Drown 2 - Gunna</li>
+          </ol>
+        </div>
+        <div class="right_section box">
+          <!--Right div-->
+          <header><h3>Image Carousel</h3></header>
+          <div class="carousel">
+            <button class = "prev">prev</button>
+            <div class="slides">
+              <!--div for images-->
+              <div class="carousel_item visible">
+                <img
+                  id="slide_1"
+                  src="images/madrid.png"
+                  alt="An image of real madrid"
+                />
+              </div>
+              <div class="carousel_item hidden">
+                <img
+                  id="slide_2"
+                  src="images/acmilan.png"
+                  alt="An image of ac milan"
+                />
+              </div>
+              <div class="carousel_item hidden">
+                <img
+                  id="slide_3"
+                  src="images/legoat.png"
+                  alt="An image of lebron james"
+                />
+              </div>
+              <div class="carousel_item hidden">
+                <img
+                  id="slide_4"
+                  src="images/onepiece.png"
+                  alt="An image of one piece"
+                />
+              </div>
+            </div>
+            <button class = "next">next</button>
+          </div>
+          <div class="box">
+            <!--div for description box-->
+            GIFs are good for animations. They are kind of limited in terms of
+            color palette. Should not be used for photos. Can't have semi-opaque
+            pixels. Difficult to get high detail. JPG images are good for
+            photos. They can handle large color pallettes without increasing
+            file size. Good for photos and images with lots of gradient. Can't
+            have transparent pixels meaning you can see white edfes of image.
+            PNGs are good for diagrams and icons. Deal with opacity well and
+            don't have color pallette limitations. SVGs are amazing. It is
+            vector-based instead of pixel-based. This means it can scale up or
+            down without loss of quality. This is good for responsive designs.
+            One problem is that text in images need to be converted to outlines
+            using image editor. If images have a lot of text, it will impact
+            file size.
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      Github account name:
+      <a
+        href="https://github.com/yshim1"
+        target="_blank"
+        rel="noopener noreferrer"
+        >yshim1</a
+      >
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
