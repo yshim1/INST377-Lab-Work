@@ -40,7 +40,6 @@ async function mainEvent() { // the async keyword means we can make API requests
   const loadDataButton = document.querySelector('#data_load');
   const generateListButton = document.querySelector('#generate');
   const loadAnimation = document.querySelector('#data_load_animation');
-  loadAnimation.style.display = 'none';
   let currentList = [];
 
   loadDataButton.addEventListener('click', async (submitEvent) => { // async has to be declared on every function that needs to "await" something
