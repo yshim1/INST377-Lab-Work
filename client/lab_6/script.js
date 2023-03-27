@@ -40,12 +40,13 @@ async function mainEvent() { // the async keyword means we can make API requests
   const loadDataButton = document.querySelector('#data_load');
   const generateListButton = document.querySelector('#generate');
   const loadAnimation = document.querySelector('#data_load_animation');
+  loadAnimation.style.display = 'none'
   let currentList = [];
 
   loadDataButton.addEventListener('click', async (submitEvent) => { // async has to be declared on every function that needs to "await" something
-    submitEvent.preventDefault(); // This prevents your page from going to http://localhost:3000/api even if your form still has an action set on it
-    console.log('form submission'); // this is substituting for a "breakpoint"
-
+     // This prevents your page from going to http://localhost:3000/api even if your form still has an action set on it
+    console.log('Loading Data'); // this is substituting for a "breakpoint"
+    loadAnimation.style.display = 'inline-block';
     /*
       ## GET requests and Javascript
         We would like to send our GET request so we can control what we do with the results
@@ -89,6 +90,7 @@ async function mainEvent() { // the async keyword means we can make API requests
 
     // This changes the response from the GET into data we can use - an "object"
     currentList = await results.json();
+    loadAnimation.style.display = 'none'
     console.table(currentList); 
     injectHTML(currentList);
     // this is called "dot notation"
