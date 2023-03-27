@@ -91,7 +91,7 @@ async function mainEvent() { // the async keyword means we can make API requests
     // This changes the response from the GET into data we can use - an "object"
     currentList = await results.json();
     loadAnimation.style.display = 'none'
-    console.table(currentList); 
+    console.table(currentList);
     injectHTML(currentList);
     // this is called "dot notation"
     // arrayFromJson.data - we're accessing a key called 'data' on the returned object
