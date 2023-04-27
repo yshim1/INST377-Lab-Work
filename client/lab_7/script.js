@@ -40,7 +40,10 @@ function getRandomIntInclusive(min, max){
     const loadDataButton = document.querySelector('#data_load');
     const generateListButton = document.querySelector('#generate');
     const loadAnimation = document.querySelector('#data_load_animation');
+    const textField = document.querySelector('#resto')
     loadAnimation.style.display = 'none'
+    generateListButton.classList.add('hidden');
+    let storedList= [];
     let currentList = [];
   
     loadDataButton.addEventListener('click', async (submitEvent) => { // async has to be declared on every function that needs to "await" something
@@ -89,10 +92,13 @@ function getRandomIntInclusive(min, max){
       */
   
       // This changes the response from the GET into data we can use - an "object"
-      currentList = await results.json();
+      storedList = await results.json();
+      if(storedList.length > 0){
+        generateListButton.classList.remove('hidden');
+      }
       loadAnimation.style.display = 'none'
-      console.table(currentList);
-      injectHTML(currentList);
+      console.table(storedList);
+      injectHTML(storedList);
       // this is called "dot notation"
       // arrayFromJson.data - we're accessing a key called 'data' on the returned object
       // it initially contains all 1,000 records from your request
@@ -111,11 +117,17 @@ function getRandomIntInclusive(min, max){
   
     generateListButton.addEventListener('click', (event) => {
       console.log('generate new list');
-      const restaurantsList = cutRestaurantList(currentList);
-      console.log(restaurantsList);
-      injectHTML(restaurantsList);
+      currentList = cutRestaurantList(storedList);
+      console.log(currentList);
+      injectHTML(currentList);
     })
-  
+
+    textField.addEventListener('input', (event) => {
+        console.log('input', event.target.value);
+        const newList = filterList(currentList, event.target.value);
+        console.log(newList);
+        injectHTML(newList)
+    })
   }
   
   
